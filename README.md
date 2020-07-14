@@ -1,1 +1,1 @@
-# java-practice
+# Selenium Practice
