@@ -28,14 +28,25 @@ public class MyClass {
 		Thread.sleep(1000);
 		// Click on checkbox items
 		driver.findElement(By.linkText("Razer")).click();
-		Thread.sleep(1000);
 		driver.findElement(By.linkText("32 GB")).click();
-		Thread.sleep(1000);
 		driver.findElement(By.linkText("Dell")).click();
 		// Navigates to a different webpage
 		driver.navigate().to("https://ebay.com");
 		// Navigates back to the previous page
 		driver.navigate().back();
+		driver.navigate().back();
+		driver.navigate().back();
+		driver.navigate().back();
+		// Create variables for comparison testing
+		String at = driver.getTitle();
+		// String variable for expected variable
+		String et = "Amazon.com : laptop 2020";
+		// Comparison 
+		if(at.equalsIgnoreCase(et)){
+			System.out.println("Test Successful");
+		} else {
+			System.out.println("Test Failed");
+		}
 		// Closes the browser
 		driver.quit();
 
