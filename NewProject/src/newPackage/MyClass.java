@@ -1,14 +1,19 @@
 package newPackage;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyClass {
-	public static void main(String[] args) throws InterruptedException{
-		// Setting the WebDriver - in this case Chrome Driver
+	public static void main(String[] args) throws InterruptedException, AWTException{
+		/*// Setting the WebDriver - in this case Chrome Driver
 		System.setProperty("webdriver.chrome.driver", "/Users/RegiBayoan/Downloads/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		// Maximises the curret webpage
@@ -47,9 +52,41 @@ public class MyClass {
 		} else {
 			System.out.println("Test Failed");
 		}
+		// Use JavascriptExecutor to scroll through the screen
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,300)");
 		// Closes the browser
-		driver.quit();
-
+		driver.quit(); */
+		
+		/* // Handling alerts 
+		
+		System.setProperty("webdriver.chrome.driver", "/Users/RegiBayoan/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		// Maximises the curret webpage
+		driver.manage().window().maximize();
+		driver.get("<APPLICATION LINK HERE>");
+		Thread.sleep(1000);
+		driver.findElement(By.id("alert")).click();
+		Thread.sleep(1000);
+		// Instantiate the Alert object and use the method switchTo() to switch focus to alert
+		Alert alert = driver.switchTo().alert();
+		String alertMessage = alert.getText();
+		System.out.println(alertMessage);
+		Thread.sleep(1000);
+		alert.accept();
+		Thread.sleep(1000);
+		// This is for pop up windows type of popups instead of a modal type of popup
+		driver.findElement(By.id("<popup id>")).click();
+		// Robot class is used for simulating an input device such as a mouse click
+		Robot robot = new Robot();
+		// This is like moving the mouse to wherever the coordinates of the 'close' button is
+		robot.mouseMove(400, 5);
+		// This is like clicking the mouse
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		Thread.sleep(1000);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		Thread.sleep(1000);
+		driver.quit(); */
 		
 	}
 }
