@@ -11,6 +11,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import net.bytebuddy.implementation.bytecode.Throw;
+
 public class MyClass {
 	public static void main(String[] args) throws InterruptedException, AWTException{
 		/*// Setting the WebDriver - in this case Chrome Driver
@@ -87,6 +89,35 @@ public class MyClass {
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		Thread.sleep(1000);
 		driver.quit(); */
+		
+		
+		/*
+		// Handling Exceptionn - handle exceptions using a try-catch block
+		// NoSuchElementException
+		System.setProperty("webdriver.chrome.driver", "/Users/RegiBayoan/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize(); 
+		driver.get("https://amazon.com/");
+		Thread.sleep(1000);
+		try {
+			driver.findElement(By.id("alert")).click();
+		}
+		catch (Exception e){
+			System.out.println("ERROR: No such id");
+			// throw still throws the error (shows the error in console) 
+			// irrespective of the exception being handled by the catch block
+			// Without this the error would not show in the console
+			throw(e);
+		}
+		finally {
+			// Always runs irresepective of the exception being handled or not
+			System.out.println("Flow execution contiunues");
+		}
+		*/
+	
+		
+		
+		
 		
 	}
 }
